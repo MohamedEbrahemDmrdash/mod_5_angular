@@ -1,0 +1,26 @@
+<h1 align="center">My Registered information</h1>
+<table ng-if="$ctrl.userDetails.status === 'valid'">
+  <tr>
+    <td>Name</td>
+    <td>&nbsp;:&nbsp;{{$ctrl.userDetails.FirstName}} {{$ctrl.userDetails.LastName}}</td>
+  </tr>
+  <tr>
+    <td>Email address</td>
+    <td>&nbsp;:&nbsp;{{$ctrl.userDetails.EmailAddress}}</td>
+  </tr>
+  <tr>
+    <td>Phone number</td>
+    <td>&nbsp;:&nbsp;{{$ctrl.userDetails.PhoneNumber}}</td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+  <tr>
+    <td>Your favorite dish</td>
+    <td>
+      <menu-item category_short_name="$ctrl.userDetails.FavoriteDish.category_short_name"
+        item="$ctrl.userDetails.FavoriteDish"/>
+    </td>
+  </tr>
+</table>
+<span class="error" ng-if="$ctrl.userDetails.status !== 'valid'">
+  Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>.
+</span>
